@@ -8,7 +8,7 @@ const SalsaMenu = () => {
 
   return (
     <div className="menu-container">
-      <h2>Salsas de la Casa</h2>
+      <h2 className="menu-title">Salsas de la Casa</h2>
       <ul className="menu-list">
         {salsas.map((salsa, index) => (
           <li key={index} className="menu-item">

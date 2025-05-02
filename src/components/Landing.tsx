@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Landing = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [image1, image2, image3];
-  const links = ["Reservations", "Menu", "Contact"];
+  const links = ["Reservations", "Menu", "About"];
   const messages = [
     "MEZCAL FOCUSED COCKTAIL MENU",
     "LOCAL INGREDIENTS",
@@ -49,7 +49,7 @@ const Landing = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: "20px"
+              gap: "20px",
             }}
           >
             <div
@@ -59,7 +59,8 @@ const Landing = () => {
                 color: "white",
                 textAlign: "center",
                 whiteSpace: "nowrap",
-                fontFamily: "'Press Start 2P', 'Rubik Mono One', 'Black Ops One', monospace"
+                fontFamily:
+                  "'Press Start 2P', 'Rubik Mono One', 'Black Ops One', monospace",
               }}
             >
               {messages[currentImage]}
@@ -87,7 +88,7 @@ const Landing = () => {
             transform: "translateX(-50%)",
             display: "flex",
             gap: "10px",
-            zIndex: 2
+            zIndex: 2,
           }}
         >
           {images.map((_, index) => (
@@ -95,13 +96,16 @@ const Landing = () => {
               key={index}
               onClick={() => setCurrentImage(index)}
               style={{
-                width: "6px",
-                borderRadius: "25%",
+                width: "3px",
+                height: "3px",
+                borderRadius: "30%",
                 border: "none",
-                background: currentImage === index ? "white" : "rgba(255, 255, 255, 0.5)",
+                background:
+                  currentImage === index ? "white" : "rgba(255, 255, 255, 0.5)",
                 cursor: "pointer",
-                outline: "none"
-              }}            />
+                outline: "none",
+              }}
+            />
           ))}
         </div>
       </div>

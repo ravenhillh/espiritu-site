@@ -14,10 +14,10 @@ export default function Nav() {
           width: "100%",
         }}
       >
-        <Link to="/bio" className="logo">
+        <Link to="/parties" className="logo">
           <h2 className="nav-link">Parties</h2>
         </Link>
-        <Link to="/photos" className="logo">
+        <Link to="/menu" className="logo">
           <h2 className="nav-link">Menu</h2>
         </Link>
         <Link to="/" className="logo">
@@ -45,10 +45,10 @@ export default function Nav() {
             />
           </div>
         </Link>{" "}
-        <Link to="/stories" className="logo">
+        <Link to="/reservations" className="logo">
           <h2 className="nav-link">Reservations</h2>
         </Link>
-        <Link to="/contact" className="logo">
+        <Link to="/drinks" className="logo">
           <h2 className="nav-link">Drinks</h2>
         </Link>{" "}
         <div

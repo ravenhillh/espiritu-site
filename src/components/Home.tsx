@@ -3,10 +3,16 @@ import Landing from "./Landing";
 import tacoImage from "../assets/image8.jpeg";
 import fadedImage from "../assets/image7.jpeg";
 import Menus from "./Menus";
+import Reservations from "./Reservations";
+import OrderOnline from "./Order";
+import Footer from "./Footer";
+import Gallery from "./Gallery";
+import Reviews from "./Reviews";
+import NewsAndMap from "./NewsAndMap";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <Landing />
       <div
         className="address"
@@ -83,6 +89,12 @@ const Home = () => {
         </div>{" "}
       </div>
       <Menus />
+      <Reservations />
+      <OrderOnline />
+      <Gallery />
+      <Reviews />
+      <NewsAndMap />
+      <Footer />
     </div>
   );
 };

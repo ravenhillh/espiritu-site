@@ -62,7 +62,10 @@ const About = () => {
             }}
           />
         </div>
-        <div className="about-block" style={{ height: "100%", position: "relative" }}>
+        <div
+          className="about-block"
+          style={{ height: "100%", position: "relative" }}
+        >
           <img
             src={AboutPic}
             style={{
@@ -72,19 +75,28 @@ const About = () => {
               filter: "brightness(0.3)",
             }}
           />
-          <div style={{
+          <div
+            style={{
               position: "absolute",
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
               color: "white",
               margin: 0,
-            }}>
-          <p>
-            <h1>About us</h1>
-            blkjdl aldkjflkj aoiwen;oia valiwnelkn alwien al oia lknwn aoinglk
-            lak slkj slinwe;oivn ;oinesl vniweo nwoenkltkn
-          </p>
+            }}
+          >
+            <h1 style={{ marginBottom: "0px" }}>About us</h1>
+            <p>
+              Espíritu in New Orleans is a celebration of the food, drinks,
+              history, and culture of Mexico.
+              <br />
+              Espíritu was created from a desire to share our passion for
+              Mexican agave spirits and Mexican cuisine. We use the freshest
+              local ingredients for our dishes and focus on environmental
+              sustainability when sourcing our mezcal and tequila. We invite you
+              to appreciate the history and culture of Mexico with us, through
+              the enjoyment of food and drink.
+            </p>
           </div>
         </div>
       </div>{" "}

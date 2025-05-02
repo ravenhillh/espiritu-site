@@ -1,11 +1,28 @@
-import SalsaMenu from "./SalsaMenu";
-import AppMenu from "./AppMenu";
+import { useState } from "react";
+import SalsaMenu from "./menus/SalsaMenu";
+import AppMenu from "./menus/AppMenu";
+import CevicheMenu from "./menus/CevicheMenu";
+import TacoMenu from "./menus/TacoMenu";
+import TortaMenu from "./menus/TortaMenu";
+import EntreeMenu from "./menus/EntreeMenu";
 
 export default function Menus() {
+  const [mainMenu, setMainMenu] = useState(true);
+  const [happyMenu, setHappyMenu] = useState(false);
+  const [partyMenu, setPartyMenu] = useState(false);
   return (
-    <div style={{ textAlign: "center" }} className="menus">
-      <h1>Our Menus</h1>
+    <div
+      className="menus"
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        paddingTop: "30px",
+      }}
+    >
+      <h1 style={{ textAlign: "center" }}>Our Menus</h1>
       <div
+        className="menu-buttons"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -22,6 +39,11 @@ export default function Menus() {
             cursor: "pointer",
             fontSize: "16px",
           }}
+          onClick={() => {
+            setMainMenu(true);
+            setHappyMenu(false);
+            setPartyMenu(false);
+          }}
         >
           Lunch and Dinner
         </button>
@@ -33,6 +55,11 @@ export default function Menus() {
             borderRadius: "5px",
             cursor: "pointer",
             fontSize: "16px",
+          }}
+          onClick={() => {
+            setMainMenu(false);
+            setHappyMenu(true);
+            setPartyMenu(false);
           }}
         >
           Happy Hour
@@ -46,13 +73,18 @@ export default function Menus() {
             cursor: "pointer",
             fontSize: "16px",
           }}
+          onClick={() => {
+            setMainMenu(false);
+            setHappyMenu(false);
+            setPartyMenu(true);
+          }}
         >
           Special Events and Private Parties
         </button>
       </div>{" "}
       <p
         style={{
-          color: "#0066cc",
+          color: "white",
           fontSize: "24px",
           marginTop: "20px",
           maxWidth: "800px",
@@ -64,10 +96,18 @@ export default function Menus() {
         flan. We have a dedicated fryer that only uses corn and rice flour.
         Staff is trained on cross contamination.
       </p>
-      <div className="menu-grid">
-        <SalsaMenu />
-        <AppMenu />
-      </div>{" "}
+      {mainMenu && (
+        <div className="menu-grid">
+          <AppMenu />
+          <SalsaMenu />
+          <TacoMenu />
+          <CevicheMenu />
+          <TortaMenu />
+          <EntreeMenu />
+        </div>
+      )}
+      {happyMenu && <div className="menu-grid">Happy Menu</div>}
+      {partyMenu && <div className="menu-grid">Party Menu</div>}
     </div>
   );
 }

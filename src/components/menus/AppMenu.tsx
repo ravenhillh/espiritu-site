@@ -44,7 +44,7 @@ const AppMenu = () => {
 
   return (
     <div className="menu-container">
-      <h2>Botanas (Appetizers)</h2>
+      <h2 className="menu-title">Botanas (Appetizers)</h2>
       <ul className="menu-list">
         {items.map((item, index) => (
           <li key={index} className="menu-item">
