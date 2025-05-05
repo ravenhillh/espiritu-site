@@ -5,6 +5,9 @@ import CevicheMenu from "./menus/CevicheMenu";
 import TacoMenu from "./menus/TacoMenu";
 import TortaMenu from "./menus/TortaMenu";
 import EntreeMenu from "./menus/EntreeMenu";
+import SingleTacos from "./menus/SingleTacos";
+import SmallBites from "./menus/SmallBites";
+import PartyMenu from "./menus/PartyMenu";
 
 export default function Menus() {
   const [mainMenu, setMainMenu] = useState(true);
@@ -106,8 +109,25 @@ export default function Menus() {
           <EntreeMenu />
         </div>
       )}
-      {happyMenu && <div className="menu-grid">Happy Menu</div>}
-      {partyMenu && <div className="menu-grid">Party Menu</div>}
+      {happyMenu && (
+        <>
+          <h2 style={{ textAlign: "center" }}>Served weekdays 3pm - 6pm</h2>
+          <div className="menu-grid">
+            <SingleTacos />
+            <SmallBites />
+          </div>
+        </>
+      )}
+      {partyMenu && (
+        <>
+          <h2 style={{ textAlign: "center" }}>
+            Easy access family style lunch and dinner for groups
+          </h2>
+          <div className="menu-grid">
+            <PartyMenu />
+          </div>
+        </>
+      )}
     </div>
   );
 }

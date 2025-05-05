@@ -6,6 +6,14 @@ import Menus from "./components/Menus";
 import Reservations from "./components/Reservations";
 import Parties from "./components/Parties";
 import Drinks from "./components/Drinks";
+import BeerMenu from "./components/BeerMenu";
+import SpiritsMenu from "./components/SpiritsMenu";
+import CocktailMenu from "./components/CocktailMenu";
+import DrinksHome from "./components/DrinksHome";
+import WineMenu from "./components/WineMenu";
+import SoftDrinksMenu from "./components/SoftDrinksMenu";
+import HappyHourMenu from "./components/HappyHourMenu";
+import CoffeeAndTeaMenu from "./components/CoffeeAndTeaMenu";
 
 const App = () => {
   return (
@@ -17,7 +25,16 @@ const App = () => {
           <Route path="menu" element={<Menus />} />
           <Route path="parties" element={<Parties />} />
           <Route path="reservations" element={<Reservations />} />
-          <Route path="drinks" element={<Drinks />} />
+          <Route path="drinks" element={<Drinks />}>
+            <Route index element={<DrinksHome />} />
+            <Route path="beer" element={<BeerMenu />} />
+            <Route path="spirits" element={<SpiritsMenu />} />
+            <Route path="cocktails" element={<CocktailMenu />} />
+            <Route path="wine" element={<WineMenu />} />
+            <Route path="soft drinks" element={<SoftDrinksMenu />} />
+            <Route path="happy hour" element={<HappyHourMenu />} />
+            <Route path="coffee and tea" element={<CoffeeAndTeaMenu />} />{" "}
+          </Route>
         </Route>
       </Routes>
     </Router>

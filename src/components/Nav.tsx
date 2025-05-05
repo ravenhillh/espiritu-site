@@ -51,6 +51,22 @@ export default function Nav() {
         <Link to="/drinks" className="logo">
           <h2 className="nav-link">Drinks</h2>
         </Link>{" "}
+        {/* <a
+          href="https://www.toasttab.com/your-restaurant-name"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-link"
+          style={{
+            backgroundColor: "#fff",
+            color: "#000",
+            // padding: "10px 20px",
+            borderRadius: "5px",
+            textDecoration: "none",
+            fontSize: "1.5em",
+          }}
+        >
+          Order
+        </a> */}
         <div
           style={{
             position: "absolute",
