@@ -180,6 +180,7 @@ button:focus-visible {
   background-color: #fff;
   font-family: "Arial", sans-serif;
   position: relative;
+  margin-top: 200px;
 }
 
 .reservations-title {
