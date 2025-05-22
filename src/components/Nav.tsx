@@ -17,6 +17,9 @@ export default function Nav() {
         <Link to="/parties" className="logo">
           <h2 className="nav-link">Parties</h2>
         </Link>
+        <Link to="/parties" className="logo">
+          <h2 className="nav-link">Contact</h2>
+        </Link>
         <Link to="/menu" className="logo">
           <h2 className="nav-link">Menu</h2>
         </Link>
@@ -51,8 +54,8 @@ export default function Nav() {
         <Link to="/drinks" className="logo">
           <h2 className="nav-link">Drinks</h2>
         </Link>{" "}
-        {/* <a
-          href="https://www.toasttab.com/your-restaurant-name"
+        <a
+          href="https://www.toasttab.com/espiritu"
           target="_blank"
           rel="noopener noreferrer"
           className="nav-link"
@@ -66,7 +69,7 @@ export default function Nav() {
           }}
         >
           Order
-        </a> */}
+        </a>
         <div
           style={{
             position: "absolute",
@@ -78,10 +81,14 @@ export default function Nav() {
           }}
         >
           <div>
-            <FaFacebook />
+            <a href="https://www.facebook.com/espiritunola">
+              <FaFacebook />
+            </a>
           </div>
           <div>
-            <FaInstagram />
+            <a href="https://www.instagram.com/espiritunola">
+              <FaInstagram />
+            </a>
           </div>
         </div>
       </div>

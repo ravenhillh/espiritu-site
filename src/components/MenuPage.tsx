@@ -17,9 +17,13 @@ export default function Menus() {
       className="menus"
       style={{
         width: "100%",
+        minHeight: "100vh", // ensures full screen height
         display: "flex",
         flexDirection: "column",
+        alignItems: "center", // this is key for horizontal centering
         paddingTop: "30px",
+        marginTop: "50px",
+        justifyContent: "flex-start", // since you are stacking vertically
       }}
     >
       <h1 style={{ textAlign: "center" }}>Our Menus</h1>

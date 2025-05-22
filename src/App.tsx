@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Layout from "./components/Layout";
-import Menus from "./components/Menus";
+// import Menus from "./components/Menus";
 import Reservations from "./components/Reservations";
 import Parties from "./components/Parties";
 import Drinks from "./components/Drinks";
@@ -14,6 +14,7 @@ import WineMenu from "./components/WineMenu";
 import SoftDrinksMenu from "./components/SoftDrinksMenu";
 import HappyHourMenu from "./components/HappyHourMenu";
 import CoffeeAndTeaMenu from "./components/CoffeeAndTeaMenu";
+import MenuPage from "./components/MenuPage";
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="menu" element={<Menus />} />
+          <Route path="menu" element={<MenuPage />} />
           <Route path="parties" element={<Parties />} />
           <Route path="reservations" element={<Reservations />} />
           <Route path="drinks" element={<Drinks />}>
