@@ -25,88 +25,41 @@ const Landing = () => {
   return (
     <div>
       <div className="carousel">
-        <div
-          className="carousel-container"
-          style={{ position: "relative", width: "100vw", height: "100vh" }}
-        >
+        <div className="carousel-container">
           <img
             src={images[currentImage]}
             alt={`Slide ${currentImage + 1}`}
-            style={{
-              width: "100vw",
-              height: "100vh",
-              objectFit: "cover",
-              filter: "brightness(0.7)",
-            }}
+            className="carousel-image"
           />
-          <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              zIndex: 2,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "20px",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "4rem",
-                fontWeight: "bold",
-                color: "white",
-                textAlign: "center",
-                whiteSpace: "nowrap",
-                fontFamily:
-                  "'Press Start 2P', 'Rubik Mono One', 'Black Ops One', monospace",
-              }}
-            >
-              {messages[currentImage]}
-            </div>
+          <div className="carousel-content">
+            <div className="carousel-message">{messages[currentImage]}</div>
             <a
               href={`/${links[currentImage].toLowerCase()}`}
-              style={{
-                color: "white",
-                textDecoration: "none",
-                fontSize: "24px",
-                padding: "10px 20px",
-                background: "rgba(43, 81, 9, 0.5)",
-                borderRadius: "5px",
-              }}
+              className="carousel-link"
             >
               {links[currentImage]}
             </a>
           </div>
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: "20px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: "10px",
-            zIndex: 2,
-          }}
-        >
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentImage(index)}
-              style={{
-                width: "3px",
-                height: "3px",
-                borderRadius: "30%",
-                border: "none",
-                background:
-                  currentImage === index ? "white" : "rgba(255, 255, 255, 0.5)",
-                cursor: "pointer",
-                outline: "none",
-              }}
-            />
-          ))}
+          <div className="carousel-dots">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImage(index)}
+                style={{
+                  width: "3px",
+                  height: "3px",
+                  borderRadius: "5%",
+                  border: "none",
+                  background:
+                    currentImage === index
+                      ? "white"
+                      : "rgba(255, 255, 255, 0.5)",
+                  cursor: "pointer",
+                  outline: "none",
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

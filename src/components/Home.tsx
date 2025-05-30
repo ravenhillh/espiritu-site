@@ -27,10 +27,10 @@ const Home = () => {
           <a
             href="https://maps.app.goo.gl/cTC95A3RLPFxApzF9"
             style={{ textDecoration: "none", marginRight: "10px" }}
+            className="address-link"
           >
-            🥑
+            520 Capdeville Street, New Orleans, LA 70130{" "}
           </a>
-          520 Capdeville Street, New Orleans, LA 70130{" "}
         </p>
       </div>{" "}
       <div

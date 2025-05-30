@@ -1,22 +1,8 @@
-import React, { useState } from "react";
-
-const generateTimeOptions = () => {
-  const times = [];
-  for (let hour = 16; hour <= 22; hour++) {
-    for (let min = 0; min < 60; min += 15) {
-      if (hour === 22 && min > 0) break;
-      const formattedHour = hour > 12 ? hour - 12 : hour;
-      const formattedMin = min === 0 ? "00" : min;
-      const ampm = hour >= 12 ? "PM" : "AM";
-      times.push(`${formattedHour}:${formattedMin} ${ampm}`);
-    }
-  }
-  return times;
-};
+import { useState } from "react";
 
 export default function Parties() {
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     phone: "",
     email: "",
     numberOfPeople: "",
@@ -25,145 +11,220 @@ export default function Parties() {
     occasion: "",
     spacePreference: "",
     budgetPerPerson: "",
-    description: "",
+    specialRequests: "",
   });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleChange = (e: { target: { name: any; value: any } }) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // You can send this data to your backend here
+    // handle form submission here
+    // you could connect to a backend here
+    const params = new URLSearchParams();
+    for (const key in formData) {
+      params.append(key, formData[key as keyof typeof formData]);
+    }
+    try {
+      const response = await fetch(
+        "https://hooks.zapier.com/hooks/catch/22250764/2jt4iwe/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: params.toString(), // ✅ this is key
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      } else {
+        console.log("Form submitted successfully!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
+
+  const wrapperStyle = {
+    maxWidth: "1000px",
+    margin: "0 auto",
+    padding: "20px",
+    backgroundColor: "#534b4b",
+    borderRadius: "10px",
+    boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+    fontFamily: "sans-serif",
+    justifyContent: "center",
+  };
+
+  const labelStyle = {
+    display: "block",
+    marginBottom: "6px",
+    fontWeight: "bold",
+  };
+
+  const inputStyle = {
+    width: "80%",
+    padding: "10px",
+    marginBottom: "15px",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+    fontSize: "16px",
+  };
+
+  const buttonStyle = {
+    backgroundColor: "#333",
+    color: "white",
+    padding: "12px 20px",
+    border: "none",
+    borderRadius: "5px",
+    fontSize: "16px",
+    cursor: "pointer",
+  };
+
+  const timeOptions = Array.from({ length: 7 * 4 }, (_, index) => {
+    const hour = Math.floor(index / 4) + 16;
+    const minutes = (index % 4) * 15;
+    const displayHour = hour > 12 ? hour - 12 : hour;
+    const ampm = hour >= 12 ? "PM" : "AM";
+    const displayMinutes = minutes.toString().padStart(2, "0");
+    return `${displayHour}:${displayMinutes} ${ampm}`;
+  });
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md"
-    >
-      <h2 className="text-2xl font-bold mb-4 text-center">
-        Group Reservations and Private Parties
+    <form onSubmit={handleSubmit} style={wrapperStyle}>
+      <h2
+        style={{
+          textAlign: "center",
+          marginBottom: "20px",
+          marginTop: "100px",
+        }}
+      >
+        Group Reservation Request
       </h2>
-
-      <label className="block mb-2 font-medium">Full Name (required):</label>
+      <h3>
+        Whether it's a bday party, baby shower, office function or any other
+        special event, please fill out the form below and we'll do our best to
+        accommodate your desired date and any requests you may have to make your
+        party/celebration memorable.
+      </h3>
+      <label style={labelStyle}>Full Name (required):</label>
       <input
         type="text"
-        name="name"
-        value={formData.name}
+        name="fullName"
+        placeholder="ex. Pedro Pascal"
+        style={inputStyle}
+        value={formData.fullName}
         onChange={handleChange}
         required
-        className="w-full mb-4 p-2 border rounded"
       />
 
-      <label className="block mb-2 font-medium">Phone (required):</label>
+      <label style={labelStyle}>Phone (required):</label>
       <input
         type="tel"
         name="phone"
+        style={inputStyle}
         value={formData.phone}
         onChange={handleChange}
         required
-        className="w-full mb-4 p-2 border rounded"
       />
 
-      <label className="block mb-2 font-medium">Email (required):</label>
+      <label style={labelStyle}>Email (required):</label>
       <input
         type="email"
         name="email"
+        style={inputStyle}
         value={formData.email}
         onChange={handleChange}
         required
-        className="w-full mb-4 p-2 border rounded"
       />
 
-      <label className="block mb-2 font-medium">Number of People:</label>
+      <label style={labelStyle}>Number of People:</label>
       <select
         name="numberOfPeople"
+        style={inputStyle}
         value={formData.numberOfPeople}
         onChange={handleChange}
         required
-        className="w-full mb-4 p-2 border rounded"
       >
-        <option value="">Select number</option>
-        {Array.from({ length: 68 }, (_, i) => i + 1).map((num) => (
-          <option key={num} value={num}>
-            {num}
+        <option value="">Select</option>
+        {Array.from({ length: 68 }, (_, i) => (
+          <option key={i + 1} value={i + 1}>
+            {i + 1}
           </option>
         ))}
       </select>
 
-      <label className="block mb-2 font-medium">Date:</label>
+      <label style={labelStyle}>Date:</label>
       <input
         type="date"
         name="date"
+        style={inputStyle}
         value={formData.date}
         onChange={handleChange}
         required
-        className="w-full mb-4 p-2 border rounded"
       />
 
-      <label className="block mb-2 font-medium">Time:</label>
+      <label style={labelStyle}>Time:</label>
       <select
         name="time"
+        style={inputStyle}
         value={formData.time}
         onChange={handleChange}
         required
-        className="w-full mb-4 p-2 border rounded"
       >
-        <option value="">Select time</option>
-        {generateTimeOptions().map((time, idx) => (
+        <option value="">Select</option>
+        {timeOptions.map((time, idx) => (
           <option key={idx} value={time}>
             {time}
           </option>
         ))}
       </select>
 
-      <label className="block mb-2 font-medium">Occasion:</label>
+      <label style={labelStyle}>Occasion:</label>
       <input
         type="text"
         name="occasion"
+        style={inputStyle}
         value={formData.occasion}
         onChange={handleChange}
-        className="w-full mb-4 p-2 border rounded"
       />
 
-      <label className="block mb-2 font-medium">Space Preference:</label>
+      <label style={labelStyle}>Space Preference:</label>
       <select
         name="spacePreference"
+        style={inputStyle}
         value={formData.spacePreference}
         onChange={handleChange}
-        className="w-full mb-4 p-2 border rounded"
       >
-        <option value="">Select preference</option>
+        <option value="">Select</option>
         <option value="Bar">Bar</option>
         <option value="Dining Room">Dining Room</option>
       </select>
 
-      <label className="block mb-2 font-medium">Budget per Person ($):</label>
+      <label style={labelStyle}>Budget Per Person (USD):</label>
       <input
         type="number"
         name="budgetPerPerson"
+        style={inputStyle}
         value={formData.budgetPerPerson}
         onChange={handleChange}
-        className="w-full mb-4 p-2 border rounded"
+        min="0"
+        step="0.01"
       />
 
-      <label className="block mb-2 font-medium">Description / Requests:</label>
+      <label style={labelStyle}>Description / Requests:</label>
       <textarea
-        name="description"
-        value={formData.description}
-        onChange={handleChange}
+        name="specialRequests"
         rows={4}
-        className="w-full mb-6 p-2 border rounded"
-      ></textarea>
+        style={inputStyle}
+        value={formData.specialRequests}
+        onChange={handleChange}
+      />
 
-      <button
-        type="submit"
-        className="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
-      >
+      <button type="submit" style={buttonStyle}>
         Submit Reservation Request
       </button>
     </form>
