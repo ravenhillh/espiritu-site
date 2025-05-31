@@ -15,6 +15,7 @@ import SoftDrinksMenu from "./components/SoftDrinksMenu";
 import HappyHourMenu from "./components/HappyHourMenu";
 import CoffeeAndTeaMenu from "./components/CoffeeAndTeaMenu";
 import MenuPage from "./components/MenuPage";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="menu" element={<MenuPage />} />
           <Route path="parties" element={<Parties />} />
           <Route path="reservations" element={<Reservations />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="drinks" element={<Drinks />}>
             <Route index element={<DrinksHome />} />
             <Route path="beer" element={<BeerMenu />} />

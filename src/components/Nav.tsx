@@ -16,7 +16,7 @@ export default function Nav() {
         <Link to="/parties" className="logo">
           <h2 className="nav-link">Parties</h2>
         </Link>
-        <Link to="/parties" className="logo">
+        <Link to="/contact" className="logo">
           <h2 className="nav-link">Contact</h2>
         </Link>
         <Link to="/menu" className="logo">
