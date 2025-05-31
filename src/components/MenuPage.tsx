@@ -3,7 +3,6 @@ import SalsaMenu from "./menus/SalsaMenu";
 import AppMenu from "./menus/AppMenu";
 import TacoMenu from "./menus/TacoMenu";
 import TortaMenu from "./menus/TortaMenu";
-import EntreeMenu from "./menus/EntreeMenu";
 import SingleTacos from "./menus/SingleTacos";
 import SmallBites from "./menus/SmallBites";
 import PartyMenu from "./menus/PartyMenu";
@@ -108,7 +107,6 @@ export default function Menus() {
           <SalsaMenu />
           <TacoMenu />
           <TortaMenu />
-          <EntreeMenu />
         </div>
       )}
       {happyMenu && (

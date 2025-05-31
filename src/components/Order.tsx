@@ -9,7 +9,7 @@ const OrderOnline = () => {
         rel="noopener noreferrer"
         className="order-button"
       >
-        Order Takeout
+        ORDER
       </a>
     </section>
   );

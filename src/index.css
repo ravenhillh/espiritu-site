@@ -112,6 +112,34 @@ button:focus-visible {
   object-fit: "cover";
   filter: "brightness(0.5)";
 }
+.menus {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+.menu-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: black;
+}
+.menu-button {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.menu-gluten-description {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.5;
+}
 
 .menu-grid {
   display: flex;
@@ -125,7 +153,7 @@ button:focus-visible {
 .menu-note {
   font-size: 0.95rem;
   color: #555;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   font-style: italic;
 }
 
@@ -162,13 +190,23 @@ button:focus-visible {
 
 .menu-list {
   list-style: none;
-  /* padding: 0;
-  margin: 0; */
+  margin-left: 0;
+  margin-top: 0;
+  text-align: left;
+  padding-left: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 24px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .menu-item {
   border-bottom: 1px solid #ddd;
   padding: 16px;
+  text-align: left;
 }
 
 .item-main {
@@ -267,8 +305,8 @@ button:focus-visible {
   background-color: #a6dcff;
   color: #000;
   padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 300;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.2s ease;
@@ -312,6 +350,8 @@ button:focus-visible {
   max-height: 0;
   overflow: hidden;
   transition: all 0.3 ease-in-out;
+  z-index: 1000;
+  border-radius: 5px;
 }
 
 .menu-links a {
@@ -439,10 +479,156 @@ button:focus-visible {
   margin-right: "10px";
   color: white;
 }
+.about-us {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.about-us-image {
+  width: 50vw;
+  height: 50vh;
+  object-fit: cover;
+}
+.about-us-box-container {
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+}
+.about-us-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.about-us-text {
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: left;
+}
+.about-us-bio {
+  font-weight: 500;
+}
+.about-us-link {
+  color: white;
+  text-decoration: none;
+  background: rgb(227, 72, 20);
+  border-radius: 5px;
+  width: 160px;
+  text-align: center;
+}
+.map {
+  width: 40vw;
+  height: 30vh;
+}
+
+.newsletter {
+  width: 50vw;
+  height: 50vh;
+  object-fit: cover;
+  align-content: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  /* padding-right: 150px; */
+  margin-left: 40px;
+}
+.footer {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  font-family: "Arial", sans-serif;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.socials-container {
+  display: flex;
+  flex-direction: column;
+}
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 2rem;
+}
+.drink-menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: black;
+  color: white;
+}
+.drink-menu-section {
+  width: 400px;
+  border-left: 2px solid white;
+  padding-left: 20px;
+}
+.drink-menu-section-title {
+  font-family: monospace;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.drink-menu-item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+}
+.drink-menu-item-description {
+  color: #d1d5db;
+  font-size: 14px;
+  margin: 4px 0 0;
+  font-style: italic;
+  font-family: monospace;
+  text-align: left;
+}
 @media screen and (max-width: 768px) {
+  .drink-menu-section {
+    width: 325px;
+    border-left: 2px solid white;
+    /* padding-left: 20px; */
+  }
+  .footer {
+    flex-direction: column;
+    margin-top: 0;
+    padding: 0;
+    gap: 0;
+    padding-top: 50px;
+  }
+  .map {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .menu-container {
+    background-color: white;
+    color: black;
+    width: 100vw;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    font-family: "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
   .menu-grid {
     flex-direction: column;
     align-items: center;
+    padding: 0;
+    margin: 0;
   }
   .nav-container {
     display: none;
@@ -536,5 +722,22 @@ button:focus-visible {
     display: flex;
     gap: clamp(5px, 1.5vw, 10px);
     z-index: 3;
+  }
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 375px;
+  }
+  .about-us-image {
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+  }
+  .about-us-box-container {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
   }
 }

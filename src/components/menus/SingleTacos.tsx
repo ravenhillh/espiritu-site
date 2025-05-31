@@ -28,7 +28,7 @@ const SingleTacos = () => {
       <ul className="menu-list">
         {items.map((item, index) => (
           <li key={index} className="menu-item">
-            <div className="item-main">
+            <div className="item-main" style={{ marginLeft: "0" }}>
               <span className="item-name">{item.name}</span>
               <span className="item-price">{item.price}</span>
             </div>

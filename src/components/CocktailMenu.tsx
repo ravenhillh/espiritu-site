@@ -162,60 +162,17 @@ const CocktailMenu = () => {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "40px",
-        justifyContent: "center",
-        padding: "40px 20px",
-        backgroundColor: "black",
-        color: "white",
-      }}
-    >
+    <div className="drink-menu-container">
       {menuData.map((section, index) => (
-        <div
-          key={index}
-          style={{
-            width: "400px",
-            borderLeft: "2px solid white",
-            paddingLeft: "20px",
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: "monospace",
-              textTransform: "uppercase",
-              marginBottom: "16px",
-            }}
-          >
-            {section.section}
-          </h2>
+        <div key={index} className="drink-menu-section">
+          <h2 className="drink-menu-section-title">{section.section}</h2>
           {section.items.map((item, idx) => (
             <div key={idx} style={{ marginBottom: "20px" }}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  fontWeight: "bold",
-                  fontSize: "16px",
-                }}
-              >
+              <div className="drink-menu-item">
                 <span>{item.name}</span>
                 <span>{item.price}</span>
               </div>
-              <p
-                style={{
-                  color: "#d1d5db",
-                  margin: "4px 0 0",
-                  fontSize: "14px",
-                  fontStyle: "italic",
-                  fontFamily: "monospace",
-                  textAlign: "left",
-                }}
-              >
-                {item.description}
-              </p>
+              <p className="drink-menu-item-description">{item.description}</p>
               <hr style={{ borderColor: "#333", marginTop: "10px" }} />
             </div>
           ))}

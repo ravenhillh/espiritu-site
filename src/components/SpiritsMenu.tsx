@@ -789,26 +789,9 @@ const SpiritsMenu = () => {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "40px",
-        justifyContent: "center",
-        padding: "40px 20px",
-        backgroundColor: "black",
-        color: "white",
-      }}
-    >
+    <div className="drink-menu-container">
       {spiritsData.map((section, index) => (
-        <div
-          key={index}
-          style={{
-            width: "400px",
-            borderLeft: "2px solid white",
-            paddingLeft: "20px",
-          }}
-        >
+        <div key={index} className="drink-menu-section">
           <h2
             style={{
               fontFamily: "monospace",
@@ -843,7 +826,15 @@ const SpiritsMenu = () => {
                   fontSize: "16px",
                 }}
               >
-                <span>{item.name}</span>
+                <span
+                  style={{
+                    textAlign: "left",
+                    display: "block",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  {item.name}
+                </span>{" "}
                 <span>{item.price}</span>
               </div>
               {item.description && (

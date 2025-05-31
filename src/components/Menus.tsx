@@ -3,7 +3,6 @@ import SalsaMenu from "./menus/SalsaMenu";
 import AppMenu from "./menus/AppMenu";
 import TacoMenu from "./menus/TacoMenu";
 import TortaMenu from "./menus/TortaMenu";
-import EntreeMenu from "./menus/EntreeMenu";
 import SingleTacos from "./menus/SingleTacos";
 import SmallBites from "./menus/SmallBites";
 import PartyMenu from "./menus/PartyMenu";
@@ -13,34 +12,11 @@ export default function Menus() {
   const [happyMenu, setHappyMenu] = useState(false);
   const [partyMenu, setPartyMenu] = useState(false);
   return (
-    <div
-      className="menus"
-      style={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        paddingTop: "30px",
-      }}
-    >
+    <div className="menus">
       <h1 style={{ textAlign: "center" }}>Our Menus</h1>
-      <div
-        className="menu-buttons"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "20px",
-          color: "black",
-        }}
-      >
+      <div className="menu-buttons-container">
         <button
-          style={{
-            backgroundColor: "white",
-            padding: "10px 20px",
-            border: "2px solid white",
-            borderRadius: "5px",
-            cursor: "pointer",
-            fontSize: "16px",
-          }}
+          className="menu-button"
           onClick={() => {
             setMainMenu(true);
             setHappyMenu(false);
@@ -50,14 +26,7 @@ export default function Menus() {
           Lunch and Dinner
         </button>
         <button
-          style={{
-            backgroundColor: "white",
-            padding: "10px 20px",
-            border: "2px solid white",
-            borderRadius: "5px",
-            cursor: "pointer",
-            fontSize: "16px",
-          }}
+          className="menu-button"
           onClick={() => {
             setMainMenu(false);
             setHappyMenu(true);
@@ -67,14 +36,7 @@ export default function Menus() {
           Happy Hour
         </button>
         <button
-          style={{
-            backgroundColor: "white",
-            padding: "10px 20px",
-            border: "2px solid white",
-            borderRadius: "5px",
-            cursor: "pointer",
-            fontSize: "16px",
-          }}
+          className="menu-button"
           onClick={() => {
             setMainMenu(false);
             setHappyMenu(false);
@@ -84,16 +46,7 @@ export default function Menus() {
           Special Events and Private Parties
         </button>
       </div>{" "}
-      <p
-        style={{
-          color: "white",
-          fontSize: "24px",
-          marginTop: "20px",
-          maxWidth: "800px",
-          margin: "20px auto",
-          lineHeight: "1.5",
-        }}
-      >
+      <p className="menu-gluten-description">
         All items are gluten free except the tortas, tres leches, and choco
         flan. We have a dedicated fryer that only uses corn and rice flour.
         Staff is trained on cross contamination.
@@ -104,7 +57,6 @@ export default function Menus() {
           <SalsaMenu />
           <TacoMenu />
           <TortaMenu />
-          <EntreeMenu />
         </div>
       )}
       {happyMenu && (

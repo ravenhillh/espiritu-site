@@ -33,57 +33,18 @@ const Home = () => {
           </a>
         </p>
       </div>{" "}
-      <div
-        className="about-us"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-        }}
-      >
-        <img
-          src={tacoImage}
-          style={{ width: "50vw", height: "50vh", objectFit: "cover" }}
-        />
-        <div style={{ position: "relative", width: "50vw", height: "50vh" }}>
-          <img
-            src={fadedImage}
-            style={{
-              width: "100%",
-              height: "100%",
-              filter: "brightness(0.2)",
-              objectFit: "cover",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              top: "35%",
-              left: "40%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "left",
-              color: "white",
-            }}
-          >
+      <div className="about-us">
+        <img src={tacoImage} className="about-us-image" />
+        <div className="about-us-box-container">
+          <img src={fadedImage} className="about-us-background-image" />
+          <div className="about-us-text">
             <h1>About us</h1>
-            <p style={{ fontWeight: "800" }}>
+            <p className="about-us-bio">
               Espiritu in New Orleans is a celebration of the food, drinks,
               history and culture of Mexico.
             </p>
-            <Link
-              to="/about"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <h2
-                style={{
-                  background: "blue",
-                  borderRadius: "5%",
-                  width: "160px",
-                  textAlign: "center",
-                }}
-              >
-                READ MORE
-              </h2>{" "}
+            <Link to="/about" className="about-us-link">
+              <h2 className="about-us-link">READ MORE</h2>{" "}
             </Link>
           </div>
         </div>{" "}

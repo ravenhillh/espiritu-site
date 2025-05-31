@@ -9,10 +9,10 @@ const Reviews = () => {
           backgroundImage: `url(${skulls})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh",
+          height: "50vh",
           backgroundColor: "rgba(255, 255, 255, 0.9)",
           backgroundBlendMode: "overlay",
-          opacity: "0.3",
+          opacity: "0.9",
         }}
       >
         <h1 style={{ color: "black", textAlign: "center", paddingTop: "30px" }}>

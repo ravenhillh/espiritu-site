@@ -106,34 +106,25 @@ export default function Nav() {
             <span></span>
             <span></span>
           </div>
-          <div
-            className="menu-links"
-            style={{
-              position: "absolute",
-              zIndex: 1000,
-              background: "white",
-              borderRadius: "5px",
-              right: "10px",
-            }}
-          >
+          <div className="menu-links">
             <li>
-              <Link to="/parties" className="logo" onClick={toggleMenu}>
-                <h2 className="nav-link">Parties</h2>
+              <Link to="/parties" onClick={toggleMenu}>
+                Parties
               </Link>
             </li>
             <li>
-              <Link to="/menu" className="logo" onClick={toggleMenu}>
-                <h2 className="nav-link">Menu</h2>
+              <Link to="/menu" onClick={toggleMenu}>
+                Menu
               </Link>
             </li>
             <li>
-              <Link to="/reservations" className="logo" onClick={toggleMenu}>
-                <h2 className="nav-link">Reservations</h2>
+              <Link to="/reservations" onClick={toggleMenu}>
+                Reservations
               </Link>
             </li>
             <li>
               <Link to="/drinks" className="logo" onClick={toggleMenu}>
-                <h2 className="nav-link">Drinks</h2>
+                Drinks
               </Link>{" "}
             </li>
             <li>
