@@ -8,7 +8,7 @@ const Contact = () => {
           just want to say hello, we're here to listen.
         </p>
         <p>
-          You can reach us by phone at (504) 309-6888 or by email at
+          You can reach us by phone at (504) 267-4975 or by email at
           espiritunola@gmail.com.
         </p>
         <p>
@@ -17,6 +17,12 @@ const Contact = () => {
             href="https://www.facebook.com/espiritunola"
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+              textDecoration: "none",
+              marginLeft: "5px",
+              marginRight: "5px",
+              color: "white",
+            }}
           >
             Facebook
           </a>
@@ -25,6 +31,12 @@ const Contact = () => {
             href="https://www.instagram.com/espiritunola"
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+              textDecoration: "none",
+              marginRight: "5px",
+              color: "white",
+              marginLeft: "5px",
+            }}
           >
             Instagram
           </a>

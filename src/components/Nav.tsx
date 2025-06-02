@@ -128,6 +128,11 @@ export default function Nav() {
               </Link>{" "}
             </li>
             <li>
+              <Link to="/contact" className="logo">
+                Contact
+              </Link>
+            </li>
+            <li>
               <a
                 href="https://www.toasttab.com/espiritu"
                 target="_blank"
