@@ -1,5 +1,5 @@
 import AboutPic from "../assets/aboutImg.jpeg";
-import FoodPic from "../assets/foodPic.jpeg";
+import FoodPic from "../assets/foodpic2.jpeg";
 import RestPic from "../assets/restaurantPic.jpg";
 
 const About = () => {

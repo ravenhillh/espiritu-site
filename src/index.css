@@ -46,6 +46,7 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin-left: 5px;
 }
 
 .navbar {
@@ -652,8 +653,60 @@ button:focus-visible {
   font-weight: bold;
   margin-bottom: 1rem;
 }
+.reviews {
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  background-blend-mode: overlay;
+  opacity: 0.9;
+  position: relative;
+}
+.reviews-header {
+  color: black;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100% - 100px);
+  padding-top: 10px;
+}
+.review-card {
+  color: black;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 80px;
+}
+.review-text {
+  font-size: 1em;
+  font-style: italic;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
 
 @media screen and (max-width: 768px) {
+  .reviews {
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-blend-mode: overlay;
+    opacity: 0.9;
+    position: relative;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
   .about-quad {
     display: flex;
     flex-direction: column;

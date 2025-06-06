@@ -7,9 +7,8 @@ const Footer = () => {
       <div className="footer">
         <div className="footer-content">
           <h2>LOCATION</h2>
-          <p>520 Capdeville Street, New Orleans, LA 70130</p>
-          <p>Phone: (504) 309-6888</p>
-          <p>Email: info@espi.com</p>
+          <p>520 Capdeville Street</p>
+          <p>New Orleans, LA 70130</p>
         </div>
         <div className="footer-content">
           <h2>HOURS</h2>

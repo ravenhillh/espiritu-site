@@ -128,7 +128,7 @@ export default function Nav() {
               </Link>{" "}
             </li>
             <li>
-              <Link to="/contact" className="logo">
+              <Link to="/contact" className="logo" onClick={toggleMenu}>
                 Contact
               </Link>
             </li>
