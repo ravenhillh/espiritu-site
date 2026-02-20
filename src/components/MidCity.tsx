@@ -99,11 +99,72 @@ const MidCity = () => {
               approachable dishes, handcrafted cocktails, and a welcoming
               atmosphere rooted in authenticity.
             </p>
-
-            <a href="#" className="midcity-about-link">
-              Learn More
-            </a>
           </div>
+        </div>
+      </section>
+
+      <section id="midcity-location" className="midcity-location-section">
+        {/* MAP */}
+        <div className="midcity-map-container">
+          <iframe
+            title="Mid City Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.2661252691223!2d-90.10103792474092!3d29.971780974960243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8620a540866aa92b%3A0x1748d6ea233fc3e2!2sEspiritu%20Mid-City!5e0!3m2!1sen!2sus!4v1771603764698!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
+        {/* ADDRESS */}
+        <div className="midcity-location-info">
+          <h2>Visit Us</h2>
+
+          <p className="midcity-address">
+            139 S Cortez St.
+            <br />
+            New Orleans, LA 70119
+          </p>
+
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="midcity-directions-link"
+          >
+            Get Directions
+          </a>
+        </div>
+
+        {/* HOURS */}
+        <div className="midcity-hours">
+          <h2>Hours</h2>
+
+          <ul>
+            <li>
+              <span>Monday</span> <span>Closed</span>
+            </li>
+            <li>
+              <span>Tuesday</span> <span>3pm – 10pm</span>
+            </li>
+            <li>
+              <span>Wednesday</span> <span>3pm – 10pm</span>
+            </li>
+            <li>
+              <span>Thursday</span> <span>3pm – 10pm</span>
+            </li>
+            <li>
+              <span>Friday</span> <span>3pm – 10pm</span>
+            </li>
+            <li>
+              <span>Saturday</span> <span>10am – 3pm</span>
+            </li>
+            <li>
+              <span>Sunday</span> <span>10am – 3pm</span>
+            </li>
+          </ul>
         </div>
       </section>
 

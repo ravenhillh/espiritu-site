@@ -902,11 +902,118 @@ button:focus-visible {
   background-color: #e9421e;
 }
 
+/* ==========================
+   MIDCITY LOCATION SECTION
+========================== */
+
+.midcity-location-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 60px;
+  background-color: white;
+  color: black;
+  align-items: stretch;
+}
+
+/* MAP */
+.midcity-map-container {
+  flex: 1.2;
+  min-height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ADDRESS INFO */
+.midcity-location-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.midcity-location-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.midcity-address {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.midcity-directions-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ff4f2b;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  width: fit-content;
+  transition: background-color 0.2s ease;
+}
+
+.midcity-directions-link:hover {
+  background-color: #e9421e;
+}
+
+.midcity-phone {
+  font-weight: 600;
+}
+
+/* HOURS */
+.midcity-hours {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.midcity-hours h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.midcity-hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.midcity-hours li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 768px) {
+  .midcity-location-section {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+
+  .midcity-map-container {
+    min-height: 300px;
+  }
+
+  .midcity-location-info,
+  .midcity-hours {
+    align-items: center;
+    text-align: center;
+  }
+
+  .midcity-hours li {
+    width: 100%;
+  }
+
   .midcity-about {
     flex-direction: column;
     height: auto;
