@@ -16,6 +16,7 @@ import HappyHourMenu from "./components/HappyHourMenu";
 import CoffeeAndTeaMenu from "./components/CoffeeAndTeaMenu";
 import MenuPage from "./components/MenuPage";
 import Contact from "./components/Contact";
+import MidCity from "./components/MidCity";
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="coffee and tea" element={<CoffeeAndTeaMenu />} />{" "}
           </Route>
         </Route>
+        <Route path="midcity" element={<MidCity />} />
       </Routes>
     </Router>
   );

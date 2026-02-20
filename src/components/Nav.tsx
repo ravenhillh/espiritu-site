@@ -13,20 +13,23 @@ export default function Nav() {
   return (
     <div className="navbar">
       <div className="nav-container">
+        <Link to="/midcity" className="logo">
+          <h2 className="nav-link">Espiritu Mid-City</h2>
+        </Link>
         <Link to="/parties" className="logo">
           <h2 className="nav-link">Parties</h2>
         </Link>
         <Link to="/contact" className="logo">
           <h2 className="nav-link">Contact</h2>
         </Link>
-        <Link to="/menu" className="logo">
-          <h2 className="nav-link">Menu</h2>
-        </Link>
         <Link to="/" className="logo">
           <div className="nav-icon">
             <img src={EspiIcon} alt="Espi Icon" className="logo-img" />
           </div>
         </Link>{" "}
+        <Link to="/menu" className="logo">
+          <h2 className="nav-link">Menu</h2>
+        </Link>
         <Link to="/reservations" className="logo">
           <h2 className="nav-link">Reservations</h2>
         </Link>
@@ -38,6 +41,7 @@ export default function Nav() {
           target="_blank"
           rel="noopener noreferrer"
           className="order-link"
+          style={{ fontWeight: "500" }}
         >
           Order
         </a>
@@ -107,6 +111,11 @@ export default function Nav() {
             <span></span>
           </div>
           <div className="menu-links">
+            <li>
+              <Link to="/midcity" onClick={toggleMenu}>
+                Espiritu Mid-City
+              </Link>
+            </li>
             <li>
               <Link to="/parties" onClick={toggleMenu}>
                 Parties
