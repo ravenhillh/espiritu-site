@@ -1045,6 +1045,19 @@ button:focus-visible {
   white-space: nowrap;
 }
 
+#midcity-drinks {
+  background-color: #111;
+  color: #f8f6f2;
+}
+
+#midcity-drinks .midcity-menu-category h3 {
+  border-bottom: 2px solid #f8f6f2;
+}
+
+#midcity-drinks .midcity-menu-item p {
+  color: #ccc;
+}
+
 html {
   scroll-behavior: smooth;
 }
