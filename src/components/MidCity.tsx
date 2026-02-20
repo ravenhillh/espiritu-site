@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import EspiIcon from "../assets/espi.jpg";
+import MidCityPic from "../assets/espirituMidCity.jpg";
+import FoodPic from "../assets/espirituMidCityFood.jpg";
 
 const MidCity = () => {
   const [open, setOpen] = useState(false);
@@ -68,12 +70,41 @@ const MidCity = () => {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="midcity-about" className="midcity-section light">
-        <h2>About Mid City</h2>
-        <p>
-          This is the Mid City location of Espíritu. Replace this section with
-          your full About component later.
-        </p>
+      <section id="midcity-about" className="midcity-about">
+        {/* Left Image */}
+        <div className="midcity-about-image-container">
+          <img
+            src={FoodPic}
+            alt="Mid City exterior"
+            className="midcity-about-image"
+          />
+        </div>
+
+        {/* Right Image with Overlay Text */}
+        <div className="midcity-about-text-container">
+          <img
+            src={MidCityPic}
+            alt="Mid City interior"
+            className="midcity-about-background"
+          />
+
+          <div className="midcity-about-overlay">
+            <h2>About Mid City</h2>
+            <p>
+              Espíritu Mid City is a neighborhood extension of our celebration
+              of food, drinks, history, and culture of Mexico.
+              <br />
+              <br />
+              Built to serve the Mid City community, this location focuses on
+              approachable dishes, handcrafted cocktails, and a welcoming
+              atmosphere rooted in authenticity.
+            </p>
+
+            <a href="#" className="midcity-about-link">
+              Learn More
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* MENU SECTION */}

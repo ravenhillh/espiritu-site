@@ -833,11 +833,97 @@ button:focus-visible {
   top: 0;
 }
 
+/* ==========================
+   MIDCITY ABOUT SECTION
+========================== */
+
+.midcity-about {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+}
+
+.midcity-about-image-container {
+  width: 50%;
+  height: 100%;
+}
+
+.midcity-about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.midcity-about-text-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.midcity-about-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.midcity-about-overlay {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  color: white;
+  max-width: 500px;
+}
+
+.midcity-about-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.midcity-about-overlay p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.midcity-about-link {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: #ff4f2b;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.midcity-about-link:hover {
+  background-color: #e9421e;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 768px) {
+  .midcity-about {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .midcity-about-image-container,
+  .midcity-about-text-container {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .midcity-about-overlay {
+    left: 50%;
+    text-align: center;
+    width: 90%;
+  }
+
   .midcity-nav-links {
     display: none;
   }
