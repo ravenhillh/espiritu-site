@@ -169,12 +169,109 @@ const MidCity = () => {
       </section>
 
       {/* MENU SECTION */}
-      <section id="midcity-menu" className="midcity-section dark">
-        <h2>Menu</h2>
-        <p>
-          This is where the Mid City food menu will render. Plug in your Menu
-          component here.
-        </p>
+      <section id="midcity-menu" className="midcity-menu-section">
+        <h2 className="midcity-menu-title">Mid-City Dinner Menu</h2>
+
+        <div className="midcity-menu-grid">
+          {/* APPETIZERS */}
+          <div className="midcity-menu-category">
+            <h3>Appetizers</h3>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Guacamole Tradicional</h4>
+                <p>Hass avocado, lime, cilantro, serrano, house-made totopos</p>
+              </div>
+              <span>$14</span>
+            </div>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Tuna Tostada</h4>
+                <p>
+                  Ahi tuna, avocado mousse, chipotle aioli, crispy corn tortilla
+                </p>
+              </div>
+              <span>$18</span>
+            </div>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Queso Fundido</h4>
+                <p>Oaxaca cheese, chorizo verde, roasted poblanos</p>
+              </div>
+              <span>$16</span>
+            </div>
+          </div>
+
+          {/* ENTREES */}
+          <div className="midcity-menu-category">
+            <h3>Entrées</h3>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Short Rib Birria</h4>
+                <p>
+                  Braised short rib, consommé, pickled onion, handmade tortillas
+                </p>
+              </div>
+              <span>$32</span>
+            </div>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Grilled Gulf Snapper</h4>
+                <p>Mojo verde, charred corn, heirloom tomato salsa</p>
+              </div>
+              <span>$34</span>
+            </div>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Duck Carnitas</h4>
+                <p>Confit duck, mole negro, crispy plantains</p>
+              </div>
+              <span>$36</span>
+            </div>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Vegetable Enchiladas</h4>
+                <p>Seasonal vegetables, salsa roja, queso fresco</p>
+              </div>
+              <span>$26</span>
+            </div>
+          </div>
+
+          {/* DESSERTS */}
+          <div className="midcity-menu-category">
+            <h3>Desserts</h3>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Churros con Chocolate</h4>
+                <p>Cinnamon sugar churros, dark chocolate sauce</p>
+              </div>
+              <span>$12</span>
+            </div>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Flan de Cajeta</h4>
+                <p>Goat milk caramel custard, toasted pecans</p>
+              </div>
+              <span>$11</span>
+            </div>
+
+            <div className="midcity-menu-item">
+              <div>
+                <h4>Chocolate Abuelita Tart</h4>
+                <p>Mexican chocolate ganache, cinnamon crema</p>
+              </div>
+              <span>$13</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* RESERVATIONS SECTION */}

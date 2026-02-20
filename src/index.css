@@ -990,11 +990,79 @@ button:focus-visible {
   border-bottom: 1px solid #ddd;
 }
 
+/* ==========================
+   MIDCITY MENU SECTION
+========================== */
+
+.midcity-menu-section {
+  padding: 100px 60px;
+  background-color: #f8f6f2;
+  color: #111;
+}
+
+.midcity-menu-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.midcity-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.midcity-menu-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #111;
+  padding-bottom: 10px;
+}
+
+.midcity-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 15px;
+}
+
+.midcity-menu-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.midcity-menu-item p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  max-width: 260px;
+}
+
+.midcity-menu-item span {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 768px) {
+  .midcity-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .midcity-menu-section {
+    padding: 80px 20px;
+  }
+
+  .midcity-menu-title {
+    font-size: 2.2rem;
+  }
+
   .midcity-location-section {
     flex-direction: column;
     padding: 60px 20px;
