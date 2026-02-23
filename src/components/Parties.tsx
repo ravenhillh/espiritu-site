@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { CSSProperties } from "react";
 
 export default function Parties() {
   const [formData, setFormData] = useState({
@@ -66,7 +67,7 @@ export default function Parties() {
     fontWeight: "bold",
   };
 
-  const inputStyle = {
+  const inputStyle: CSSProperties = {
     width: "100%",
     maxWidth: "700px",
     padding: "10px",
@@ -74,9 +75,10 @@ export default function Parties() {
     border: "1px solid #ccc",
     borderRadius: "5px",
     fontSize: "16px",
+    boxSizing: "border-box",
   };
 
-  const buttonStyle = {
+  const buttonStyle: CSSProperties = {
     backgroundColor: "#333",
     color: "white",
     padding: "12px 20px",
