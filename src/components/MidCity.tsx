@@ -341,6 +341,10 @@ const MidCity = () => {
         <button className="resy-button">
           Book a Table <span className="resy-label">Resy</span>
         </button>
+        <p>
+          To book a reservation for a party of 8 or larger{" "}
+          <Link to="/parties">Go here</Link>
+        </p>
       </section>
 
       {/* ORDER ONLINE SECTION */}

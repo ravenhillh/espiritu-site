@@ -5,6 +5,7 @@ export default function Parties() {
     fullName: "",
     phone: "",
     email: "",
+    location: "",
     numberOfPeople: "",
     date: "",
     time: "",
@@ -36,7 +37,7 @@ export default function Parties() {
             "Content-Type": "application/x-www-form-urlencoded",
           },
           body: params.toString(), // ✅ this is key
-        }
+        },
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -66,7 +67,8 @@ export default function Parties() {
   };
 
   const inputStyle = {
-    width: "80%",
+    width: "100%",
+    maxWidth: "700px",
     padding: "10px",
     marginBottom: "15px",
     border: "1px solid #ccc",
@@ -82,6 +84,8 @@ export default function Parties() {
     borderRadius: "5px",
     fontSize: "16px",
     cursor: "pointer",
+    width: "100%",
+    maxWidth: "700px",
   };
 
   const timeOptions = Array.from({ length: 7 * 4 }, (_, index) => {
@@ -140,6 +144,19 @@ export default function Parties() {
         onChange={handleChange}
         required
       />
+
+      <label style={labelStyle}>Location (required):</label>
+      <select
+        name="location"
+        style={inputStyle}
+        value={formData.location}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select Location</option>
+        <option value="Espiritu Downtown">Espiritu Downtown</option>
+        <option value="Espiritu Mid-City">Espiritu Mid-City</option>
+      </select>
 
       <label style={labelStyle}>Number of People:</label>
       <select
