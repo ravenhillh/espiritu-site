@@ -93,7 +93,7 @@ const MidCity = () => {
           />
 
           <div className="midcity-about-overlay">
-            <h2>About Mid City</h2>
+            <h2>Espíritu Mid City</h2>
             <p>
               Espíritu Mid City is a neighborhood extension of our celebration
               of food, drinks, history, and culture of Mexico.
@@ -386,6 +386,13 @@ const MidCity = () => {
           >
             Get Directions
           </a>
+          <h2>Contact Us</h2>
+
+          <p className="midcity-address">
+            (504) 666-6666
+            <br />
+            espiritunola@gmail.com
+          </p>
         </div>
 
         {/* HOURS */}
