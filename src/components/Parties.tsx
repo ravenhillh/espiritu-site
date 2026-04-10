@@ -2,6 +2,9 @@ import { useState } from "react";
 import type { CSSProperties } from "react";
 
 export default function Parties() {
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -23,6 +26,7 @@ export default function Parties() {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    setStatus("loading");
 
     try {
       const response = await fetch("/.netlify/functions/send-email", {
@@ -37,9 +41,25 @@ export default function Parties() {
         throw new Error("Failed to send");
       }
 
-      console.log("Form submitted successfully!");
+      // ✅ Reset form
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        location: "",
+        numberOfPeople: "",
+        date: "",
+        time: "",
+        occasion: "",
+        spacePreference: "",
+        budgetPerPerson: "",
+        specialRequests: "",
+      });
+
+      setStatus("success");
     } catch (error) {
-      console.error("Error:", error);
+      console.error(error);
+      setStatus("error");
     }
   };
 
@@ -235,9 +255,19 @@ export default function Parties() {
         value={formData.specialRequests}
         onChange={handleChange}
       />
+      {status === "success" && (
+        <p style={{ color: "lightgreen", marginBottom: "15px" }}>
+          ✅ Your reservation request has been sent! We'll be in touch soon.
+        </p>
+      )}
 
-      <button type="submit" style={buttonStyle}>
-        Submit Reservation Request
+      {status === "error" && (
+        <p style={{ color: "red", marginBottom: "15px" }}>
+          ❌ Something went wrong. Please try again.
+        </p>
+      )}
+      <button type="submit" style={buttonStyle} disabled={status === "loading"}>
+        {status === "loading" ? "Sending..." : "Submit Reservation Request"}
       </button>
     </form>
   );
