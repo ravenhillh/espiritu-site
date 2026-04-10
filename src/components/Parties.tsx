@@ -23,28 +23,21 @@ export default function Parties() {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    // handle form submission here
-    // you could connect to a backend here
-    const params = new URLSearchParams();
-    for (const key in formData) {
-      params.append(key, formData[key as keyof typeof formData]);
-    }
+
     try {
-      const response = await fetch(
-        "https://hooks.zapier.com/hooks/catch/22250764/2jt4iwe/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: params.toString(), // ✅ this is key
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(formData),
+      });
+
       if (!response.ok) {
-        throw new Error("Network response was not ok");
-      } else {
-        console.log("Form submitted successfully!");
+        throw new Error("Failed to send");
       }
+
+      console.log("Form submitted successfully!");
     } catch (error) {
       console.error("Error:", error);
     }
